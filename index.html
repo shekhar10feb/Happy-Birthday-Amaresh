@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey, Amaresh! This is for you 👉</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./intro.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="sub-container">
+                <div class="messageDiv">
+                    <h1 class="message">Happy Birthday</h1>
+                    <h1 class="message">Amaresh!</h1>
+                </div>
+            </div>
+    </main>
+    <script>
+        // Ensure that the browser supports the service worker API 
+        if("serviceWorker" in navigator) {
+
+           // Start registration function takes as argument 
+           window.addEventListener("load", function() {
+              navigator.serviceWorker
+
+              // The register function takes as argument 
+              // the file path to the worker's file 
+              .register("/serviceWorker.js")
+              .then(res => console.log("service worker registered"))
+              .catch(err => console.log(`Service Worker Error: ${err}`));
+            });
+        } else {
+            console.log("Service Worker is not supported by browser.");
+        }
+    </script>
+    <script src="./js/behave.js"></script>
+</body>
+</html>
